@@ -1,0 +1,49 @@
+%article#content.home
+  %form#vote_form_box{:action => '/', :method => 'post'}
+    - if false
+      %section#tweet_box
+        #user_select.c
+          - @people.each do |person|
+            .user.left
+              %a.box{:href => 'javascript:;'}
+                %img{:src => person.avatar_url, :title => "@#{person.screen_name} (#{person.name})", :alt => ''}
+
+    %section
+      %fieldset#follow_name
+        .label.row
+          %label{:for => 'person_screen_name'}
+            %h1 I want #{configatron.targeted_person} to follow:
+        .input.row.rel
+          .storymark.left.abs @
+          %input#person_screen_name{:type => 'text', :name => 'person[screen_name]', :value => (!@user.blank? ? @user.screen_name : '')}
+
+      %fieldset#follow_tweet
+        .label.row.rel
+          %label{:for => 'person_tweet'}
+            %h1 Tell #{configatron.targeted_person_formal} & Your Friends:
+          .charsleft
+        .input.row.rel
+          .storymark.left.abs &ldquo;
+          .storymark.right.abs &rdquo;
+          %textarea#person_tweet{:name => 'person[tweet_message]'}
+          #person_appendTweet
+          %textarea#actual_tweet.hide{:name => 'person[tweet]'}
+
+      %fieldset#submit_buttons.buttons
+        %button Tell 'em to follow!
+
+      %fieldset.notice
+        You #{@user.blank? ? 'will' : 'might'} need to authorize access on Twitter to vote for @<span class="person_screen_name"></span>.
+
+%aside#sidebar
+
+
+
+- @content_for_template_footer = capture_haml do
+  %script{:type => 'text/javascript'}
+    wwkf.values.tweetName = '#{!@user.blank? ? @user.screen_name : 'wwkf'}';
+    wwkf.values.targetName = '#{configatron.targeted_person.gsub(/\@/, '')}';
+    wwkf.values.initTweet = 'Yo @#{configatron.targeted_person.gsub(/\@/, '')}, you should follow @#{!@user.blank? ? @user.screen_name : 'wwkf'} because...';
+    wwkf.values.appendTweet = ' #wwkf http://whowillkanyefollow.com';
+
+    $(document).ready(function(){ wwkf.init(); });

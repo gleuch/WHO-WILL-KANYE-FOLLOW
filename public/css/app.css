@@ -1,0 +1,31 @@
+
+
+.rel {position: relative;}
+.abs {position: absolute;}
+.hide {display: none;}
+
+div, p, h1, h2, h3, h4, h5, h6, header, nav, article, section, aside, footer {clear: both; display: block;}
+
+p, h1, h2, h3, h4, h5, h6 {color: #555555; font-family: Helvetica, Arial, Verdana, sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-weight: bold;}
+
+fieldset {margin: 0; padding: 0; border: none;}
+
+
+
+#container {width: 675px; margin: 0 auto;}
+
+header {}
+header h1 {text-align: center;}
+
+#content_area {}
+
+footer {}
+
+
+#content.home {width: 502px; margin: 0 auto;}
+#vote_form_box section {width: 434px; padding: 34px;}
+#vote_form_box .storymark {clear: both; float: none; top: 0; left: -34px; font-size: 3.2em; color: #555555; font-weight: bold;}
+#vote_form_box .storymark.right {left: auto; right: -34px;}
+#vote_form_box input[type=text], #vote_form_box textarea {width: 422px; border: none; padding: 6px; background: #dedede;}
+#vote_form_box label {}
