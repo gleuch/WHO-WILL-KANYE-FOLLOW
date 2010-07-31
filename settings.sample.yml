@@ -1,0 +1,16 @@
+development: &local
+
+  site_name:              Who Will XXX Follow?
+
+  targeted_person:        @XXX
+  targeted_person_formal: Mr. XXX
+  targeted_person_short:  XXX
+
+  twitter_oauth_token:    
+  twitter_oauth_secret:   
+
+
+  db_connection:  mysql://root@localhost/wwkf_dev
+  
+production:
+  <<: *local
