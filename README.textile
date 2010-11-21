@@ -6,8 +6,3 @@ An app to allow users to tweet their votes for who @kanyewest should follow.
 h3. Getting Started
 
 Copy settings.sample.yml to settings.yml, make a Twitter app, add your code and your target.
-
-
-h3. Credits
-
-Developed by "Greg Leuch":http://gleuch.com and "Amrit Richmond":http://twitter.com/amritrichmond
